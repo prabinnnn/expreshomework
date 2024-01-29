@@ -3,6 +3,7 @@ const app = express();
 const indexofrouter = require("./routes");
 app.use(express.json());
 app.use("/", indexofrouter);
+// app.use(cookieParser());
 app.use((req, res, err, next) => {
   const errmsage = err ? err.toString() : "something missing";
   res.status(500).json({ msg: errmsage });
